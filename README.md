@@ -1,5 +1,5 @@
 **Overview**
-- Minimal Bun + Three.js (WebGPU) app that loads a GeoTIFF and colors a spinning cube via TSL nodes.
+- Minimal Bun + Three.js (WebGPU) app that loads a GeoTIFF and colors a plane via TSL nodes.
 - Tweakpane UI toggles height vs hillshade and sun angles.
 
 **Prerequisites**
