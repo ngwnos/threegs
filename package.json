@@ -1,0 +1,17 @@
+{
+  "name": "simplegeo",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bash -lc 'bun build src/main.js --outdir public --watch & bun server.js'",
+    "build": "bun build src/main.js --outdir public --minify --sourcemap",
+    "start": "bun server.js",
+    "serve": "bun run build && bun run start"
+  },
+  "dependencies": {
+    "geotiff": "^2.1.4-beta.0",
+    "three": "^0.180.0",
+    "tweakpane": "^4.0.5"
+  }
+}
