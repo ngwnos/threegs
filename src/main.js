@@ -5,7 +5,7 @@ import { fromArrayBuffer } from "geotiff";
 import { Pane } from "tweakpane";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
-// Minimal WebGPU + TSL scene with a cube
+// Minimal WebGPU + TSL scene
 (async () => {
   const renderer = new WebGPURenderer({
     antialias: true,
@@ -27,7 +27,6 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
   camera.position.z = 3;
 
   // Create one empty 32-bit data texture for a USGS tile (10012x10012)
-  // Note: allocates ~401 MB of Float32 memory
   const TILE_W = 10012;
   const TILE_H = 10012;
   const tileData = new Float32Array(TILE_W * TILE_H); // zeros
@@ -44,7 +43,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
   tileTexture.wrapS = THREE.ClampToEdgeWrapping;
   tileTexture.wrapT = THREE.ClampToEdgeWrapping;
   tileTexture.needsUpdate = true;
-  // Expose for future use/debug (not used by the cube)
+  // Expose globally for debugging
   globalThis.tileTexture = tileTexture;
 
   // Single plane; color from GeoTIFF height via TSL
